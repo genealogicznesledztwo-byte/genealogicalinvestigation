@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genealogical Investigation | Chalamet's Hidden Roots: The Kraków File</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0e1013;
+      --bg-card: #16191e;
+      --bg-card-hover: #1d2128;
+      --gold: #c9a461;
+      --gold-light: #e4c68b;
+      --crimson: #a83232;
+      --text-main: #e8e6e1;
+      --text-muted: #9ca3af;
+      --border: rgba(201, 164, 97, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* TOP NAVIGATION */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(14, 16, 19, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .brand span {
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 0.85rem;
+      display: block;
+      letter-spacing: 0.08em;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.82rem;
+      margin-left: 1.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    .case-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.5rem;
+      background: rgba(201, 164, 97, 0.07);
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      max-width: 780px;
+      margin: 0 auto 2.5rem;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+    }
+
+    /* HERO COVER / VIDEO PLACEHOLDER */
+    .video-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      border: 1px solid var(--gold);
+      background: #000;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+
+    .video-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-status-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(10, 12, 15, 0.96) 0%, rgba(10, 12, 15, 0.75) 70%, transparent 100%);
+      padding: 2rem 1.5rem 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      text-align: left;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201, 164, 97, 0.16);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      font-weight: 600;
+    }
+
+    /* SECTION STYLING */
+    section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.35rem;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+    }
+
+    /* LEGAL & SPELLING MYSTERY */
+    .mystery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .mystery-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      position: relative;
+    }
+
+    .stamp {
+      display: inline-block;
+      border: 2px solid var(--crimson);
+      color: var(--crimson);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      padding: 0.2rem 0.55rem;
+      text-transform: uppercase;
+      transform: rotate(-2deg);
+      margin-bottom: 1rem;
+    }
+
+    .stamp.gold-stamp {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .mystery-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .mystery-card p {
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+
+    /* MINSK CONTEXT BOX */
+    .context-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .context-panel {
+      background: linear-gradient(145deg, #171a20 0%, #121418 100%);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .context-panel h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      color: #ffffff;
+      margin-bottom: 0.85rem;
+    }
+
+    .context-panel p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      margin-bottom: 0.85rem;
+    }
+
+    /* COMPLETE 6-GENERATION PEDIGREE CHART */
+    .tree-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2rem 1.25rem;
+      margin-top: 2rem;
+      overflow-x: auto;
+    }
+
+    .pedigree-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(175px, 1fr));
+      gap: 0.85rem;
+      min-width: 1120px;
+      align-items: stretch;
+    }
+
+    .gen-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 0.65rem;
+    }
+
+    .gen-header {
+      text-align: center;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* NUCLEAR FAMILY UNIT: KEEPS MARC CHALAMET CLOSE BELOW NICOLE FLENDER & CLEARLY SEPARATED FROM RODMANS */
+    .nuclear-family-unit {
+      margin-top: auto;
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      border-left: 2px dashed rgba(201, 164, 97, 0.35);
+      padding-left: 0.55rem;
+    }
+
+    .p-card {
+      background: #101216;
+      border: 1px solid rgba(201, 164, 97, 0.28);
+      padding: 0.65rem 0.75rem;
+      border-radius: 2px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .p-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .p-card.subject {
+      border: 1.5px solid var(--gold);
+      background: linear-gradient(180deg, rgba(201, 164, 97, 0.16) 0%, #101216 100%);
+      margin-top: auto;
+      margin-bottom: 2.2rem;
+    }
+
+    .p-card.krakow-core {
+      border-left: 3px solid var(--gold);
+    }
+
+    .p-card.minsk-line {
+      border-left: 3px solid #6b8cae;
+    }
+
+    .p-card.paternal-compact {
+      padding: 0.45rem 0.65rem;
+      background: rgba(16, 18, 22, 0.65);
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+      max-width: 92%;
+    }
+
+    .p-card.paternal-compact .p-name {
+      font-size: 0.94rem;
+      color: #d1d5db;
+    }
+
+    .p-card.paternal-compact .p-meta {
+      font-size: 0.68rem;
+    }
+
+    .p-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+    }
+
+    .p-meta {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .tree-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .swatch-gold {
+      width: 12px;
+      height: 12px;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    .swatch-blue {
+      width: 12px;
+      height: 12px;
+      background: #6b8cae;
+      display: inline-block;
+    }
+
+    /* ARCHIVAL SCANS GALLERY & LIGHTBOX */
+    .scans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .scan-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .scan-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .scan-thumb-box {
+      position: relative;
+      height: 210px;
+      background: #090a0c;
+      overflow: hidden;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .scan-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      opacity: 0.92;
+    }
+
+    .scan-card:hover .scan-thumb-box img {
+      transform: scale(1.04);
+      opacity: 1;
+    }
+
+    .zoom-badge {
+      position: absolute;
+      bottom: 0.65rem;
+      right: 0.65rem;
+      background: rgba(14, 16, 19, 0.88);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .scan-body {
+      padding: 1.35rem;
+      flex-grow: 1;
+    }
+
+    .scan-year {
+      font-size: 0.72rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .scan-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .scan-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* KRAKÓW LOCATIONS (2x2 GRID FOR 4 VIDEOS) */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 1.75rem;
+      margin-top: 1.75rem;
+    }
+
+    @media (max-width: 600px) {
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .location-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .location-media {
+      aspect-ratio: 16 / 9;
+      background: #07080a;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .location-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* PORTRAIT VIDEO PILLARBOXED CLEANLY INSIDE 16:9 STAGE */
+    .location-media video.portrait-clip {
+      object-fit: contain;
+      background: #050608;
+    }
+
+    .location-info {
+      padding: 1.45rem;
+    }
+
+    .location-info .district {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .location-info h4 {
+      font-family: 'Cinzel', serif;
+      color: #ffffff;
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .location-info p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* CTA BANNER TO BLOGSPOT */
+    .cta-box {
+      background: linear-gradient(135deg, #191d24 0%, #111317 100%);
+      border: 1px solid var(--gold);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .cta-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 0.85rem;
+    }
+
+    .cta-box p {
+      max-width: 670px;
+      margin: 0 auto 1.75rem;
+      color: var(--text-muted);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: #0e1013;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.95rem 2.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* LIGHTBOX MODAL */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 6, 8, 0.94);
+      z-index: 999;
+      padding: 2rem;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 80vh;
+      border: 1px solid var(--gold);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    }
+
+    .lightbox-caption {
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        Genealogical Investigation
+        <span>Archives &bull; Ancestral Roots &bull; Historical Forensics</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#mystery">Surname Mystery</a>
+        <a href="#tree">6-Gen Pedigree</a>
+        <a href="#documents">Archival Scans</a>
+        <a href="#krakow">Kraków Sites</a>
+        <a href="#archives">Full Dossier</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO & COVER IMAGE (READY TO SWAP FOR YOUTUBE EMBED) -->
+  <div class="hero">
+    <div class="case-badge">Case File #01 &bull; Kraków &amp; Minsk Archives (1829–1902)</div>
+    <h1>From <em>Kraków</em> to Arrakis:<br>The Hidden Roots of Timothée Chalamet</h1>
+    <p class="hero-subtitle">
+      Uncovering primary 19th-century vital records, Austro-Hungarian population censuses, and historic tenement addresses in Kraków’s Kazimierz district that trace the maternal lineage of Timothée Chalamet.
+    </p>
+
+    <!-- COVER GRAPHIC (WILL BE REPLACED BY YOUTUBE IFRAME UPON PREMIERE) -->
+    <div class="video-wrapper">
+      <img src="chalamet-cover.png" alt="Chalamet's Hidden Roots: The Kraków File" />
+      <div class="video-status-bar">
+        <div>
+          <strong style="color: #fff; font-size: 1.05rem; display: block;">Chalamet’s Hidden Roots: The Kraków File</strong>
+          <span style="color: var(--text-muted); font-size: 0.85rem;">Documentary episode in final post-production &bull; Archival dossier now open below</span>
+        </div>
+        <div class="status-pill">&#9679; Documentary Premiere Soon</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: SURNAME MYSTERIES & MATERNAL ORIGINS -->
+  <section id="mystery">
+    <span class="section-label">Archival &amp; Linguistic Forensics</span>
+    <h2>Three Keys to Decoding the Kraków Records</h2>
+    <p style="color: var(--text-muted); max-width: 840px;">
+      Tracing the Flender family through 19th-century Galician archives requires navigating Austro-Hungarian civil marriage laws, phonetic German-Polish spelling shifts, and cross-border Jewish migration routes.
+    </p>
+
+    <div class="mystery-grid">
+      <div class="mystery-card">
+        <div class="stamp">Unrecognized by the State</div>
+        <h3>1. The “Kempler” Surname Shift</h3>
+        <p>
+          Because <strong>Eliasz Mojżesz Flender</strong> and <strong>Mirjam Kempler</strong> initially wed solely in a religious ceremony, Austro-Hungarian civil authorities legally classified their children—including Timothée’s great-grandfather <strong>Jakób (Jacob) Flender</strong> (b. 1892)—under their mother’s maiden name, <strong>Kempler</strong>.
+        </p>
+      </div>
+
+      <div class="mystery-card">
+        <div class="stamp">June 26, 1902</div>
+        <h3>2. Civil Marriage &amp; Census Correction</h3>
+        <p>
+          In the 1900 Kraków Census (Card No. 1117), <em>Kempler</em> is crossed out and replaced with <em>Flender</em>. An official slip glued onto the sheet confirms their civil marriage on <strong>June 26, 1902</strong>—followed by a July 17, 1902 Galicia Viceroyalty rescript formally legitimizing the surname.
+        </p>
+      </div>
+
+      <div class="mystery-card">
+        <div class="stamp gold-stamp">Orthographic Drift</div>
+        <h3>3. “Flender” vs. “Plender”</h3>
+        <p>
+          Across 19th-century Kraków birth registers and the 1880 census, clerks frequently recorded the family surname interchangeably as <strong>Flender</strong> and <strong>Plender</strong> (and occasionally <em>Gletner</em> via maternal lines). This variation reflects phonetic transcription by German- and Polish-speaking scribes adapting Yiddish/Hebrew pronunciation and cursive <em>F/P</em> capital letterforms.
+        </p>
+      </div>
+    </div>
+
+    <!-- MINSK / RODMAN MATERNAL GRANDMOTHER NOTE -->
+    <div class="context-split">
+      <div class="context-panel">
+        <span class="section-label" style="margin-bottom: 0.35rem;">Eastern European Maternal Branch</span>
+        <h3>The Rodman Line from Minsk (Belarus)</h3>
+        <p>
+          While Timothée Chalamet’s maternal grandfather, screenwriter <strong>Harold Flender</strong>, descends directly from Kraków’s Flender, Kempler, and Kassner families, his maternal grandmother—<strong>Enid Rodman</strong> (1927–2022)—rooted the family in another major historic center of Eastern European Jewry: <strong>Minsk</strong>, today the capital of Belarus.
+        </p>
+        <p style="margin-bottom: 0;">
+          Her paternal grandparents, <strong>Max Rodman</strong> (1849–1930) and <strong>Celia Kantrowitz</strong> (c. 1850–1932), emigrated from the Minsk Governorate before the birth of their son <strong>Phil Rodman</strong> (b. 1895). Unlike the well-preserved Austro-Hungarian registers of Kraków, original 19th-century vital records from Minsk suffered severe wartime losses and remain subject to strict archival access restrictions in contemporary Belarus.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: COMPLETE 6-GENERATION PEDIGREE -->
+  <section id="tree">
+    <span class="section-label">Verified Lineage Reconstruction</span>
+    <h2>Complete 6-Generation Maternal Ancestral Tree</h2>
+    <p style="color: var(--text-muted); max-width: 840px;">
+      Full multi-generational pedigree connecting 19th-century Kraków and Minsk ancestors to Timothée Chalamet. Scroll horizontally on smaller screens to inspect all six generations.
+    </p>
+
+    <div class="tree-container">
+      <div class="pedigree-grid">
+        <!-- GEN 1: SUBJECT (ALIGNED WITH PARENTS UNIT AT LOWER HALF) -->
+        <div class="gen-column">
+          <div class="gen-header">Subject</div>
+          <div class="p-card subject">
+            <div class="p-name">Timothée Chalamet</div>
+            <div class="p-meta">Born Dec 27, 1995 &bull; New York City</div>
+          </div>
+        </div>
+
+        <!-- GEN 2: PARENTS (NICOLE FLENDER & COMPACT MARC CHALAMET GROUPED TOGETHER AT BOTTOM, SEPARATE FROM RODMANS) -->
+        <div class="gen-column">
+          <div class="gen-header">Parents</div>
+          <div class="nuclear-family-unit">
+            <div class="p-card krakow-core">
+              <div class="p-name">Nicole Flender</div>
+              <div class="p-meta">Mother &bull; Kraków &amp; Minsk Maternal Lineage</div>
+            </div>
+            <div class="p-card paternal-compact">
+              <div class="p-name">Marc Chalamet</div>
+              <div class="p-meta">Father &bull; French paternal line (separate from Rodman/Flender branches)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GEN 3: GRANDPARENTS -->
+        <div class="gen-column">
+          <div class="gen-header">Grandparents</div>
+          <div class="p-card minsk-line">
+            <div class="p-name">Enid Rodman</div>
+            <div class="p-meta">1927 – 2022 (Age 95)</div>
+          </div>
+          <div class="p-card krakow-core">
+            <div class="p-name">Harold Flender</div>
+            <div class="p-meta">1925 – 1975 (Age 50)</div>
+          </div>
+        </div>
+
+        <!-- GEN 4: GREAT-GRANDPARENTS -->
+        <div class="gen-column">
+          <div class="gen-header">Great-Grandparents</div>
+          <div class="p-card minsk-line">
+            <div class="p-name">Rose Levine</div>
+            <div class="p-meta">Abt. 1903 – Deceased</div>
+          </div>
+          <div class="p-card minsk-line">
+            <div class="p-name">Phil Rodman</div>
+            <div class="p-meta">b. 1895 &bull; Minsk roots</div>
+          </div>
+          <div class="p-card">
+            <div class="p-name">Sadie Kassner</div>
+            <div class="p-meta">1894 – 1988 (Age 94)</div>
+          </div>
+          <div class="p-card krakow-core">
+            <div class="p-name">Jacob (Jakób) Flender</div>
+            <div class="p-meta">b. Sept 18, 1892, Kraków – 1992 (Age 100)</div>
+          </div>
+        </div>
+
+        <!-- GEN 5: 2x GREAT-GRANDPARENTS -->
+        <div class="gen-column">
+          <div class="gen-header">2&times; Great-Grandparents</div>
+          <div class="p-card minsk-line">
+            <div class="p-name">Celia Kantrowitz</div>
+            <div class="p-meta">Abt. 1850 – 1932 (Age 82)</div>
+          </div>
+          <div class="p-card minsk-line">
+            <div class="p-name">Max Rodman</div>
+            <div class="p-meta">1849 – 1930 (Age 81) &bull; Minsk</div>
+          </div>
+          <div class="p-card">
+            <div class="p-name">Chaja Frankel</div>
+            <div class="p-meta">b. 1860 – Deceased</div>
+          </div>
+          <div class="p-card">
+            <div class="p-name">Herschel Kassner</div>
+            <div class="p-meta">b. 1860 – Deceased</div>
+          </div>
+          <div class="p-card krakow-core">
+            <div class="p-name">Marjem (Mirjam) Kempler</div>
+            <div class="p-meta">1862 – 1910 (Age 48)</div>
+          </div>
+          <div class="p-card krakow-core">
+            <div class="p-name">Elias Moses Flender</div>
+            <div class="p-meta">1862 – 1911 (Age 49) &bull; Kraków</div>
+          </div>
+        </div>
+
+        <!-- GEN 6: 3x & 4x GREAT-GRANDPARENTS -->
+        <div class="gen-column">
+          <div class="gen-header">3&times; &amp; 4&times; Great-Grandparents</div>
+          <div class="p-card minsk-line">
+            <div class="p-name">Samuel Kantrowitz &amp; Gertrude Levy</div>
+            <div class="p-meta">Parents of Celia Kantrowitz</div>
+          </div>
+          <div class="p-card minsk-line">
+            <div class="p-name">Aaron Rodman &amp; Ana Rosenzweig</div>
+            <div class="p-meta">Parents of Max Rodman</div>
+          </div>
+          <div class="p-card">
+            <div class="p-name">Samuel Frankel &amp; Chaja</div>
+            <div class="p-meta">Parents of Chaja Frankel</div>
+          </div>
+          <div class="p-card">
+            <div class="p-name">Noah Kassner &amp; Jentel Wachtel</div>
+            <div class="p-meta">Parents of Herschel Kassner</div>
+          </div>
+          <div class="p-card krakow-core">
+            <div class="p-name">Jacob Kempler &amp; Ella</div>
+            <div class="p-meta">Parents of Marjem Kempler</div>
+          </div>
+          <div class="p-card krakow-core">
+            <div class="p-name">Abraham Flender &amp; Sime Gletner</div>
+            <div class="p-meta">Sime b. Feb 22, 1829 (dau. of Simon Gletner)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tree-legend">
+        <div class="legend-item"><span class="swatch-gold"></span> Kraków Archival Line (Flender / Kempler / Gletner)</div>
+        <div class="legend-item"><span class="swatch-blue"></span> Minsk Governorate Line (Rodman / Kantrowitz)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PRIMARY ARCHIVAL DOCUMENTS (WITH LIGHTBOX ZOOM) -->
+  <section id="documents">
+    <span class="section-label">Primary Source Evidence</span>
+    <h2>Original Kraków Archival Records</h2>
+    <p style="color: var(--text-muted); max-width: 840px;">
+      Click any archival scan below to inspect the original manuscript record in full resolution.
+    </p>
+
+    <div class="scans-grid">
+      <!-- SCAN 1: JACOB FLENDER 1892 -->
+      <div class="scan-card">
+        <div class="scan-thumb-box" onclick="openLightbox('scan-jacob-1892.jpg', '1892 Birth Record of Jakób (Jacob) Flender — Entry No. 590, 9 Krakowska St., Kraków')">
+          <img src="scan-jacob-1892.jpg" alt="1892 Birth Record of Jacob Flender" />
+          <span class="zoom-badge">Inspect Scan &#8599;</span>
+        </div>
+        <div class="scan-body">
+          <span class="scan-year">September 18, 1892 &bull; Entry No. 590</span>
+          <h4>Birth Record of Great-Grandfather Jacob Flender</h4>
+          <p>
+            Kraków Jewish Birth Register recording the birth of <strong>Jakób</strong> at <strong>9 Krakowska Street</strong> to tailor <em>Eliasz Mojżesz Flender</em> and <em>Marja Kempler</em> (daughter of Jacob Kempler and Ella of Chrzanów), with later marginalia noting the 1902 civil legitimization.
+          </p>
+        </div>
+      </div>
+
+      <!-- SCAN 2: ELIAS MOSES FLENDER 1862 -->
+      <div class="scan-card">
+        <div class="scan-thumb-box" onclick="openLightbox('scan-elias-1862.jpg', '1862 Birth Record of Elias Moses Flender — Kraków Register with 1902 Surname Rescript')">
+          <img src="scan-elias-1862.jpg" alt="1862 Birth Record of Elias Moses Flender" />
+          <span class="zoom-badge">Inspect Scan &#8599;</span>
+        </div>
+        <div class="scan-body">
+          <span class="scan-year">May 2, 1862 &bull; Kraków Vital Register</span>
+          <h4>Birth Record of 2&times; Great-Grandfather Elias Moses Flender</h4>
+          <p>
+            Records the birth of <strong>Elias Moses</strong> to day-laborer <em>Abraham Plender</em> and <em>Sime née Gletner</em>. The right-hand margin preserves the official July 17, 1902 Viceroyalty decree authorizing the change from his maternal surname <em>Gletner</em> to <strong>Plender / Flender</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- SCAN 3: SIME GLETNER 1829 -->
+      <div class="scan-card">
+        <div class="scan-thumb-box" onclick="openLightbox('scan-sime-1829.jpg', '1829 Birth Record of 3x Great-Grandmother Sime Gletner — Free City of Kraków Act No. 216')">
+          <img src="scan-sime-1829.jpg" alt="1829 Birth Record of Sime Gletner" />
+          <span class="zoom-badge">Inspect Scan &#8599;</span>
+        </div>
+        <div class="scan-body">
+          <span class="scan-year">February 22, 1829 &bull; Act No. 216 (Free City of Kraków)</span>
+          <h4>Birth Record of 3&times; Great-Grandmother Sime Gletner</h4>
+          <p>
+            Polish-language civil birth certificate from the Free City of Kraków recording the birth of <strong>Sime</strong> on February 22, 1829, daughter of late tailor <strong>Szymon Gletner</strong> (who died aged 54 on October 30, 1828) and his widow <em>Reyzla Herschówna</em>.
+          </p>
+        </div>
+      </div>
+
+      <!-- SCAN 4: 1880 KRAKÓW CENSUS -->
+      <div class="scan-card">
+        <div class="scan-thumb-box" onclick="openLightbox('scan-census-1880.jpg', '1880 Kraków Population Census — House No. 214, Peisech & Syme Plender with son Ele Morits (Flender)')">
+          <img src="scan-census-1880.jpg" alt="1880 Kraków Census Flender Family" />
+          <span class="zoom-badge">Inspect Scan &#8599;</span>
+        </div>
+        <div class="scan-body">
+          <span class="scan-year">1880 Austro-Hungarian Census &bull; House No. 214</span>
+          <h4>1880 Kraków Census: The Plender / Flender Household</h4>
+          <p>
+            Lists <em>Peisech Plender</em> (b. 1803), his wife <em>Syme Plender</em> (b. 1830, Kraków), and their son <strong>Ele Morits [Flender]</strong> (b. 1862, Kraków), working as a tailor’s journeyman (<em>czeladnik krawiecki</em>), illustrating the fluid <em>Plender/Flender</em> spelling.
+          </p>
+        </div>
+      </div>
+
+      <!-- SCAN 5: 1900 KRAKÓW CENSUS -->
+      <div class="scan-card">
+        <div class="scan-thumb-box" onclick="openLightbox('scan-census-1900.jpg', '1900 Kraków Population Census — Card No. 1117 showing Kempler crossed out to Flender')">
+          <img src="scan-census-1900.jpg" alt="1900 Kraków Census Card 1117" />
+          <span class="zoom-badge">Inspect Scan &#8599;</span>
+        </div>
+        <div class="scan-body">
+          <span class="scan-year">December 31, 1900 &bull; Census Card No. 1117</span>
+          <h4>1900 Kraków Census: The Kempler-to-Flender Correction</h4>
+          <p>
+            Documents tailor <strong>Elias Moritz Flender</strong>, wife <strong>Miriam (née Kempler)</strong>, and their children—with <em>Kempler</em> crossed out and amended to <em>Flender</em> alongside the attached official note confirming their June 26, 1902 civil marriage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: KRAKÓW LOCATIONS (4 FIELD VIDEO CLIPS INTEGRATED) -->
+  <section id="krakow">
+    <span class="section-label">On-Location Field Filming</span>
+    <h2>Historic Sites &amp; Addresses in Kraków</h2>
+    <p style="color: var(--text-muted); max-width: 840px;">
+      Original tenement buildings and historic squares in Kraków’s Kazimierz and Stradom districts documented across the Flender family’s municipal and vital records.
+    </p>
+
+    <div class="locations-grid">
+      <!-- VIDEO 1: SZEROKA / LEWKOWA -->
+      <div class="location-card">
+        <div class="location-media">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="video_1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="location-info">
+          <span class="district">Kazimierz Historic Core &bull; Szeroka &amp; Lewkowa Streets</span>
+          <h4>Szeroka Square &amp; Corner of Lewkowa St.</h4>
+          <p>
+            The historic heart of Kraków’s Jewish quarter, where generations of the Flender, Kempler, and Gletner families lived, worshipped, and registered community vital events.
+          </p>
+        </div>
+      </div>
+
+      <!-- VIDEO 2: DIETLA 51 -->
+      <div class="location-card">
+        <div class="location-media">
+          <video class="portrait-clip" controls muted loop playsinline preload="metadata">
+            <source src="video_2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="location-info">
+          <span class="district">Stradom / Kazimierz Border</span>
+          <h4>ul. Dietla 51</h4>
+          <p>
+            Representative grand boulevard corner townhouse reflecting the urban landscape of Kraków at the turn of the 20th century as the family prepared for transatlantic migration.
+          </p>
+        </div>
+      </div>
+
+      <!-- VIDEO 3: MIODOWA 14 -->
+      <div class="location-card">
+        <div class="location-media">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="video_3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="location-info">
+          <span class="district">Kazimierz District &bull; Near Tempel Synagogue</span>
+          <h4>ul. Miodowa 14</h4>
+          <p>
+            Historic tenement building along Miodowa Street linked to the Flender family’s late 19th-century community life and Kraków municipal registrations.
+          </p>
+        </div>
+      </div>
+
+      <!-- VIDEO 4: KRAKOWSKA / WOLNICA SQUARE -->
+      <div class="location-card">
+        <div class="location-media">
+          <video controls muted loop playsinline preload="metadata">
+            <source src="video_4.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="location-info">
+          <span class="district">Kazimierz &bull; Krakowska St. / Plac Wolnica</span>
+          <h4>ul. Krakowska 9 &amp; Wolnica Square</h4>
+          <p>
+            The historic Krakowska thoroughfare and adjacent Wolnica Square—where Entry No. 590 of the 1892 birth register records the birth of Timothée Chalamet’s great-grandfather Jakób Flender.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CALL TO ACTION TO MAIN BLOG -->
+  <section id="archives">
+    <div class="cta-box">
+      <span class="section-label">Complete Dossier &amp; Extended Transcripts</span>
+      <h3>Explore the Full Archival Evidence</h3>
+      <p>
+        Access full paleographic transcriptions, additional Kraków municipal files, and extended genealogical notes on the official research blog.
+      </p>
+      <a href="https://genealogicznesledztwo.blogspot.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        Read Full Research Essay on the Blog &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX FOR FULL-SIZE SCANS -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="Archival Document Full View" />
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Genealogical Investigation</strong> &bull; Research &amp; Documentary by Janusz Stanisław Andrasz</p>
+    <p style="margin-top: 0.4rem;">Original archival investigation conducted in the National Archives in Kraków (Archiwum Narodowe w Krakowie).</p>
+  </footer>
+
+  <script>
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').textContent = caption;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
