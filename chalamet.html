@@ -236,7 +236,7 @@
       margin-bottom: 0.5rem;
     }
 
-    /* PEDIGREE TREE BOX */
+    /* PEDIGREE TREE STRUCTURE */
     .tree-box {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -245,9 +245,9 @@
     }
 
     .tree-generation {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px dashed rgba(201, 164, 97, 0.2);
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px dashed rgba(201, 164, 97, 0.25);
     }
 
     .tree-generation:last-child {
@@ -262,14 +262,32 @@
       color: var(--gold);
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       display: block;
     }
 
-    .gen-names {
+    .ancestor-card {
+      background: rgba(14, 16, 19, 0.6);
+      border-left: 2px solid var(--gold);
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .ancestor-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .ancestor-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.25srem;
+    }
+
+    .ancestor-details {
+      font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
     .btn-gold {
@@ -392,22 +410,41 @@
       </div>
     </section>
 
-    <!-- DRZEWO GENEALOGICZNE -->
+    <!-- WŁAŚCIWE DRZEWO GENEALOGICZNE (PEDIGREE STRUCTURE) -->
     <section>
       <h2>Pedigree &amp; Lineage Reconstruction</h2>
-      <p>Multi-generation structural breakdown of the maternal ancestral branches analyzed in this case file.</p>
+      <p>Multi-generation structural breakdown and ancestral branches verified through primary vital records in Kraków.</p>
+      
       <div class="tree-box">
+        <!-- Generation I -->
         <div class="tree-generation">
-          <span class="gen-title">Generation I (Proband's Maternal Line)</span>
-          <div class="gen-names">Flender Family Lineage (Kraków / Kazimierz)</div>
+          <span class="gen-title">Generation I &bull; Proband's Maternal Line</span>
+          <div class="ancestor-card">
+            <div class="ancestor-name">Flender Family Branch</div>
+            <div class="ancestor-details">Kraków &amp; Kazimierz District &bull; Primary documentation linking maternal descent.</div>
+          </div>
         </div>
+
+        <!-- Generation II -->
         <div class="tree-generation">
-          <span class="gen-title">Generation II</span>
-          <div class="gen-names">Kempler &amp; Gletner Ancestral Branches (Galicia Vital Registers)</div>
+          <span class="gen-title">Generation II &bull; Parental &amp; Allied Branches</span>
+          <div class="ancestor-card">
+            <div class="ancestor-name">Kempler Ancestral Line</div>
+            <div class="ancestor-details">Galician Vital Registers &bull; Documented in 19th-century civil and parish acts.</div>
+          </div>
+          <div class="ancestor-card">
+            <div class="ancestor-name">Gletner Ancestral Line</div>
+            <div class="ancestor-details">Galician Vital Registers &bull; Cross-referenced with Kraków municipal records.</div>
+          </div>
         </div>
+
+        <!-- Generation III & IV -->
         <div class="tree-generation">
-          <span class="gen-title">Generation III &amp; IV</span>
-          <div class="gen-names">19th-Century Archival Progenitors Documented via Austro-Hungarian Censuses (1880 &amp; 1900)</div>
+          <span class="gen-title">Generation III &amp; IV &bull; 19th-Century Progenitors</span>
+          <div class="ancestor-card">
+            <div class="ancestor-name">Austro-Hungarian Census Progenitors (1880 &amp; 1900)</div>
+            <div class="ancestor-details">Documented residential tenements, household lists, and vital milestones across historical Kraków archives.</div>
+          </div>
         </div>
       </div>
     </section>
