@@ -167,22 +167,62 @@
     /* GALLERY GRID FOR SCANS & VIDEOS */
     .media-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
       margin-top: 1.5rem;
     }
 
     .media-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 1rem;
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
+      transition: border-color 0.2s;
     }
 
-    .media-card img, .media-card video {
+    .media-card:hover {
+      border-color: var(--gold);
+    }
+
+    .scan-link {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1rem;
+      background: #000;
+    }
+
+    .scan-link img {
       width: 100%;
       aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .scan-link:hover img {
+      transform: scale(1.03);
+    }
+
+    .zoom-hint {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: rgba(14, 16, 19, 0.85);
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.75rem;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .media-card video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
       border: 1px solid rgba(255,255,255,0.1);
       margin-bottom: 1rem;
@@ -191,9 +231,46 @@
 
     .media-card h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       color: #ffffff;
       margin-bottom: 0.5rem;
+    }
+
+    /* PEDIGREE TREE BOX */
+    .tree-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .tree-generation {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed rgba(201, 164, 97, 0.2);
+    }
+
+    .tree-generation:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .gen-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .gen-names {
+      font-size: 1.05rem;
+      color: #ffffff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
     }
 
     .btn-gold {
@@ -258,94 +335,4 @@
     <section>
       <h2>Archival Findings &amp; Research Dossier</h2>
       <p>
-        The genealogical investigation traces the family roots of actor Timothée Chalamet directly to historical archives in Kraków. Through careful examination of birth, marriage, and census records from the 19th century, we reconstruct the ancestral path of the Flender family in the heart of Galicia.
-      </p>
-      <p>
-        Pełny dokumentowany opis śledztwa, skany oryginalnych metryk oraz szczegółowe drzewo genealogiczne dostępne są bezpośrednio w szczegółowym studium opublikowanym na blogu badawczym.
-      </p>
-      <a href="https://genealogicznesledztwo.blogspot.com/2024/04/timothee-chalamet-i-jego-przodkowie-z.html" target="_blank" rel="noopener noreferrer" class="btn-gold">
-        Przeczytaj pełny artykuł na blogu &nearr;
-      </a>
-    </section>
-
-    <!-- SKANY METRYK -->
-    <section>
-      <h2>Archival Scans &amp; Vital Records</h2>
-      <p>Original 19th-century documents and census records from state archives.</p>
-      <div class="media-grid">
-        <div class="media-card">
-          <img src="scan-sime-1829.jpg" alt="Scan 1829" />
-          <h3>Vital Record (1829)</h3>
-          <p>Kraków civil registration records documenting early family milestones.</p>
-        </div>
-        <div class="media-card">
-          <img src="scan-elias-1862.jpg" alt="Scan 1862" />
-          <h3>Vital Record (1862)</h3>
-          <p>Archival act from the civil registries of Kraków.</p>
-        </div>
-        <div class="media-card">
-          <img src="scan-jacob-1892.jpg" alt="Scan 1892" />
-          <h3>Vital Record (1892)</h3>
-          <p>Parish and civil registry documentation.</p>
-        </div>
-        <div class="media-card">
-          <img src="scan-census-1880.jpg" alt="Census 1880" />
-          <h3>Austro-Hungarian Census (1880)</h3>
-          <p>Household registration list documenting residential addresses in Kraków.</p>
-        </div>
-        <div class="media-card">
-          <img src="scan-census-1900.jpg" alt="Census 1900" />
-          <h3>Austro-Hungarian Census (1900)</h3>
-          <p>Turn-of-the-century population census records.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FILMIKI Z KRAKOWA -->
-    <section>
-      <h2>Field Research &amp; Kraków Footage</h2>
-      <p>On-location video documentation from historical streets and tenements.</p>
-      <div class="media-grid">
-        <div class="media-card">
-          <video controls>
-            <source src="video_1.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-          <h3>Field Footage #01</h3>
-          <p>Documentary documentation from ancestral locations.</p>
-        </div>
-        <div class="media-card">
-          <video controls>
-            <source src="video_2.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-          <h3>Field Footage #02</h3>
-          <p>On-site exploration of historical districts in Kraków.</p>
-        </div>
-        <div class="media-card">
-          <video controls>
-            <source src="video_3.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-          <h3>Field Footage #03</h3>
-          <p>Archival context and street-level research.</p>
-        </div>
-        <div class="media-card">
-          <video controls>
-            <source src="video_4.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-          <h3>Field Footage #04</h3>
-          <p>Final summary of the Kraków archival field study.</p>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <footer>
-    <p><strong>GenealogicalInvestigation.com</strong> &bull; Research, Archival Forensics &amp; Documentary Production by <strong>Janusz Stanisław Andrasz</strong></p>
-  </footer>
-
-</body>
-</html>
+        The genealogical investigation traces the family roots of actor
