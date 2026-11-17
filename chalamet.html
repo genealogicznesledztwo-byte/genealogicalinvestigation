@@ -49,6 +49,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .brand {
@@ -85,7 +87,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 3.5rem 1.5rem;
     }
@@ -104,7 +106,7 @@
 
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+      font-size: clamp(2.3rem, 4.5vw, 3.8rem);
       font-weight: 700;
       line-height: 1.15;
       color: #ffffff;
@@ -119,7 +121,8 @@
     .lead {
       color: var(--text-muted);
       font-size: 1.1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      max-width: 900px;
     }
 
     /* COVER IMAGE CONTAINER */
@@ -128,7 +131,7 @@
       aspect-ratio: 16 / 9;
       background: #000;
       border: 1px solid var(--gold);
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
       overflow: hidden;
       box-shadow: 0 15px 35px rgba(0,0,0,0.7);
     }
@@ -140,24 +143,57 @@
       display: block;
     }
 
-    .content-block {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 2.25rem;
-      margin-bottom: 2rem;
+    /* SECTIONS */
+    section {
+      margin-bottom: 3.5rem;
     }
 
-    .content-block h2 {
+    h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.85rem;
+      font-size: 2.2rem;
       color: #ffffff;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
     }
 
-    .content-block p {
+    p {
       color: var(--text-muted);
       font-size: 0.98rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+
+    /* GALLERY GRID FOR SCANS & VIDEOS */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .media-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-card img, .media-card video {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.1);
       margin-bottom: 1rem;
+      background: #000;
+    }
+
+    .media-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
     }
 
     .btn-gold {
@@ -170,7 +206,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 0.82rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       transition: background 0.2s;
     }
 
@@ -200,7 +236,8 @@
         <span>Archives &bull; Ancestral Roots &bull; Historical Forensics</span>
       </a>
       <nav class="nav-links">
-        <a href="index.html#cases">&larr; Back to Cases</a>
+        <a href="index.html#cases">&larr; Back to Case Files</a>
+        <a href="https://genealogicznesledztwo.blogspot.com/2024/04/timothee-chalamet-i-jego-przodkowie-z.html" target="_blank" rel="noopener noreferrer">Full Blog Article &nearr;</a>
       </nav>
     </div>
   </header>
@@ -212,23 +249,98 @@
       Primary archival reconstruction of the maternal Flender, Kempler, and Gletner lineages across 19th-century Kraków vital registers, census records, and Kazimierz tenement addresses.
     </p>
 
-    <!-- GRAFIKA ZAMIAST PLIKU WIDEO -->
+    <!-- GRAFIKA OKŁADKI -->
     <div class="cover-frame">
       <img src="chalamet-cover.png" alt="Timothée Chalamet: The Kraków File — Archival Dossier" />
     </div>
 
-    <div class="content-block">
+    <!-- SEKCJA OPISU I LINKU DO BLOGA -->
+    <section>
       <h2>Archival Findings &amp; Research Dossier</h2>
       <p>
         The genealogical investigation traces the family roots of actor Timothée Chalamet directly to historical archives in Kraków. Through careful examination of birth, marriage, and census records from the 19th century, we reconstruct the ancestral path of the Flender family in the heart of Galicia.
       </p>
       <p>
-        Pełny dokumentowany opis śledztwa, skany oryginalnych metryk oraz szczegółowe drzewo genealogiczne dostępne są bezpośrednio w opublikowanym studium na blogu badawczym.
+        Pełny dokumentowany opis śledztwa, skany oryginalnych metryk oraz szczegółowe drzewo genealogiczne dostępne są bezpośrednio w szczegółowym studium opublikowanym na blogu badawczym.
       </p>
       <a href="https://genealogicznesledztwo.blogspot.com/2024/04/timothee-chalamet-i-jego-przodkowie-z.html" target="_blank" rel="noopener noreferrer" class="btn-gold">
         Przeczytaj pełny artykuł na blogu &nearr;
       </a>
-    </div>
+    </section>
+
+    <!-- SKANY METRYK -->
+    <section>
+      <h2>Archival Scans &amp; Vital Records</h2>
+      <p>Original 19th-century documents and census records from state archives.</p>
+      <div class="media-grid">
+        <div class="media-card">
+          <img src="scan-sime-1829.jpg" alt="Scan 1829" />
+          <h3>Vital Record (1829)</h3>
+          <p>Kraków civil registration records documenting early family milestones.</p>
+        </div>
+        <div class="media-card">
+          <img src="scan-elias-1862.jpg" alt="Scan 1862" />
+          <h3>Vital Record (1862)</h3>
+          <p>Archival act from the civil registries of Kraków.</p>
+        </div>
+        <div class="media-card">
+          <img src="scan-jacob-1892.jpg" alt="Scan 1892" />
+          <h3>Vital Record (1892)</h3>
+          <p>Parish and civil registry documentation.</p>
+        </div>
+        <div class="media-card">
+          <img src="scan-census-1880.jpg" alt="Census 1880" />
+          <h3>Austro-Hungarian Census (1880)</h3>
+          <p>Household registration list documenting residential addresses in Kraków.</p>
+        </div>
+        <div class="media-card">
+          <img src="scan-census-1900.jpg" alt="Census 1900" />
+          <h3>Austro-Hungarian Census (1900)</h3>
+          <p>Turn-of-the-century population census records.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILMIKI Z KRAKOWA -->
+    <section>
+      <h2>Field Research &amp; Kraków Footage</h2>
+      <p>On-location video documentation from historical streets and tenements.</p>
+      <div class="media-grid">
+        <div class="media-card">
+          <video controls>
+            <source src="video_1.mp4" type="video/mp4">
+            Your browser does not support video.
+          </video>
+          <h3>Field Footage #01</h3>
+          <p>Documentary documentation from ancestral locations.</p>
+        </div>
+        <div class="media-card">
+          <video controls>
+            <source src="video_2.mp4" type="video/mp4">
+            Your browser does not support video.
+          </video>
+          <h3>Field Footage #02</h3>
+          <p>On-site exploration of historical districts in Kraków.</p>
+        </div>
+        <div class="media-card">
+          <video controls>
+            <source src="video_3.mp4" type="video/mp4">
+            Your browser does not support video.
+          </video>
+          <h3>Field Footage #03</h3>
+          <p>Archival context and street-level research.</p>
+        </div>
+        <div class="media-card">
+          <video controls>
+            <source src="video_4.mp4" type="video/mp4">
+            Your browser does not support video.
+          </video>
+          <h3>Field Footage #04</h3>
+          <p>Final summary of the Kraków archival field study.</p>
+        </div>
+      </div>
+    </section>
+
   </div>
 
   <footer>
