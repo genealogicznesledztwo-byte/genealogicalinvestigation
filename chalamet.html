@@ -17,7 +17,7 @@
       --gold-light: #e4c68b;
       --text-main: #e8e6e1;
       --text-muted: #9ca3af;
-      --border: rgba(201, 164, 97, 0.3);
+      --border: rgba(201, 164, 97, 0.25);
     }
 
     * {
@@ -236,62 +236,31 @@
       margin-bottom: 0.5rem;
     }
 
-    /* KLASYCZNE, CZYTELNE DRZEWO GENEALOGICZNE (HTML/CSS) */
-    .family-tree-container {
+    /* DRZEWO GENEALOGICZNE - SEKCJA GRAFICZNA Z POWIĘKSZENIEM */
+    .tree-display-box {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 2.5rem 1.5rem;
+      padding: 1.5rem;
       margin-top: 1.5rem;
-      overflow-x: auto;
     }
 
-    .tree-branch-group {
-      margin-bottom: 2rem;
-      padding-left: 1.5rem;
-      border-left: 2px solid var(--gold);
-    }
-
-    .tree-branch-title {
-      font-family: 'Cinzel', serif;
-      font-size: 0.85rem;
-      color: var(--gold);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
+    .tree-link {
       display: block;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--gold);
+      background: #000;
     }
 
-    .tree-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
+    .tree-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
     }
 
-    .tree-box-item {
-      background: rgba(14, 16, 19, 0.9);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      padding: 1.15rem;
-    }
-
-    .tree-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      color: #ffffff;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-
-    .tree-dates {
-      font-size: 0.82rem;
-      color: var(--gold-light);
-      margin-bottom: 0.4rem;
-      letter-spacing: 0.05em;
-    }
-
-    .tree-relation {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    .tree-link:hover img {
+      transform: scale(1.02);
     }
 
     .btn-gold {
@@ -312,254 +281,4 @@
       background: var(--gold-light);
     }
 
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 2.75rem 1.5rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    footer strong {
-      color: var(--gold);
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="brand">
-        Genealogical Investigation
-        <span>Archives &bull; Ancestral Roots &bull; Historical Forensics</span>
-      </a>
-      <nav class="nav-links">
-        <a href="index.html#cases">&larr; Back to Case Files</a>
-        <a href="https://genealogicznesledztwo.blogspot.com/2024/04/timothee-chalamet-i-jego-przodkowie-z.html" target="_blank" rel="noopener noreferrer">Full Blog Article &nearr;</a>
-      </nav>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="series-kicker">Case File #01 &bull; Kraków, Galicia &amp; Minsk</div>
-    <h1>Timothée Chalamet: <em>The Kraków File</em></h1>
-    <p class="lead">
-      Primary archival reconstruction of the maternal Flender, Kempler, and Gletner lineages across 19th-century Kraków vital registers, census records, and Kazimierz tenement addresses.
-    </p>
-
-    <!-- OKŁADKA -->
-    <div class="cover-frame">
-      <img src="chalamet-cover.png" alt="Timothée Chalamet: The Kraków File — Archival Dossier" />
-    </div>
-
-    <!-- OPIS I BLOG -->
-    <section>
-      <h2>Archival Findings &amp; Research Dossier</h2>
-      <p>
-        The genealogical investigation traces the family roots of actor Timothée Chalamet directly to historical archives in Kraków. Through careful examination of birth, marriage, and census records from the 19th century, we reconstruct the ancestral path of the Flender family in the heart of Galicia.
-      </p>
-      <p>
-        Pełny dokumentowany opis śledztwa, skany oryginalnych metryk oraz szczegółowe drzewo genealogiczne dostępne są bezpośrednio w szczegółowym studium opublikowanym na blogu badawczym.
-      </p>
-      <a href="https://genealogicznesledztwo.blogspot.com/2024/04/timothee-chalamet-i-jego-przodkowie-z.html" target="_blank" rel="noopener noreferrer" class="btn-gold">
-        Przeczytaj pełny artykuł na blogu &nearr;
-      </a>
-    </section>
-
-    <!-- SKANY Z POWIĘKSZENIEM -->
-    <section>
-      <h2>Archival Scans &amp; Vital Records (Evidence)</h2>
-      <p>Original 19th-century documents and census registers from state archives. Click any scan to open and inspect the high-resolution evidence in a separate window.</p>
-      <div class="media-grid">
-        <div class="media-card">
-          <a href="scan-sime-1829.jpg" target="_blank" class="scan-link" title="Click to open full-size evidence">
-            <img src="scan-sime-1829.jpg" alt="Scan 1829" />
-            <span class="zoom-hint">🔍 Click to Enlarge</span>
-          </a>
-          <h3>Vital Record / Civil Registry (1829)</h3>
-          <p>Kraków civil registration records documenting early family milestones and foundational generational links in the district.</p>
-        </div>
-        <div class="media-card">
-          <a href="scan-elias-1862.jpg" target="_blank" class="scan-link" title="Click to open full-size evidence">
-            <img src="scan-elias-1862.jpg" alt="Scan 1862" />
-            <span class="zoom-hint">🔍 Click to Enlarge</span>
-          </a>
-          <h3>Vital Record / Birth Act (1862)</h3>
-          <p>Archival act from the civil registries of Kraków detailing paternal and maternal descent lines.</p>
-        </div>
-        <div class="media-card">
-          <a href="scan-jacob-1892.jpg" target="_blank" class="scan-link" title="Click to open full-size evidence">
-            <img src="scan-jacob-1892.jpg" alt="Scan 1892" />
-            <span class="zoom-hint">🔍 Click to Enlarge</span>
-          </a>
-          <h3>Vital Record / Marriage &amp; Death Act (1892)</h3>
-          <p>Parish and civil registry documentation establishing residence and familial alliances in historic Kraków.</p>
-        </div>
-        <div class="media-card">
-          <a href="scan-census-1880.jpg" target="_blank" class="scan-link" title="Click to open full-size evidence">
-            <img src="scan-census-1880.jpg" alt="Scan 1880" />
-            <span class="zoom-hint">🔍 Click to Enlarge</span>
-          </a>
-          <h3>Austro-Hungarian Population Census (1880)</h3>
-          <p>Household registration list documenting exact residential addresses, tenement occupancy, and professions in Kraków's Kazimierz district.</p>
-        </div>
-        <div class="media-card">
-          <a href="scan-census-1900.jpg" target="_blank" class="scan-link" title="Click to open full-size evidence">
-            <img src="scan-census-1900.jpg" alt="Scan 1900" />
-            <span class="zoom-hint">🔍 Click to Enlarge</span>
-          </a>
-          <h3>Austro-Hungarian Population Census (1900)</h3>
-          <p>Turn-of-the-century population census records tracking demographic shifts and familial continuity.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRZEWO GENEALOGICZNE - MATERNALNA LINIA FLENDER & RODZINA -->
-    <section>
-      <h2>Pedigree &amp; Lineage Reconstruction</h2>
-      <p>Hierarchical family tree focusing on the maternal lineage of Timothée Chalamet (Nicole Flender branch), reconstructed strictly from primary vital records and census data.</p>
-      
-      <div class="family-tree-container">
-        <!-- Generacja I & II: Proband i Rodzice -->
-        <div class="tree-branch-group">
-          <span class="tree-branch-title">Generation I &amp; II &bull; Proband &amp; Parents</span>
-          <div class="tree-grid">
-            <div class="tree-box-item">
-              <div class="tree-name">Timothée Chalamet</div>
-              <div class="tree-dates">Birth</div>
-              <div class="tree-relation">Proband / Descendant</div>
-            </div>
-            <div class="tree-box-item">
-              <div class="tree-name">Nicole Flender</div>
-              <div class="tree-dates">Birth</div>
-              <div class="tree-relation">Mother (Maternal line continued)</div>
-            </div>
-            <div class="tree-box-item" style="opacity: 0.75;">
-              <div class="tree-name">Marc Chalamet</div>
-              <div class="tree-dates">Deceased</div>
-              <div class="tree-relation">Father (French line - not continued)</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Generacja III: Dziadkowie -->
-        <div class="tree-branch-group">
-          <span class="tree-branch-title">Generation III &bull; Grandparents</span>
-          <div class="tree-grid">
-            <div class="tree-box-item">
-              <div class="tree-name">Enid Rodman</div>
-              <div class="tree-dates">1927 – 2022 | 95</div>
-              <div class="tree-relation">Maternal Grandmother</div>
-            </div>
-            <div class="tree-box-item">
-              <div class="tree-name">Harold Flender</div>
-              <div class="tree-dates">1925 – 1975 | 50</div>
-              <div class="tree-relation">Maternal Grandfather</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Generacja IV: Pradziadkowie -->
-        <div class="tree-branch-group">
-          <span class="tree-branch-title">Generation IV &bull; Great-Grandparents</span>
-          <div class="tree-grid">
-            <div class="tree-box-item">
-              <div class="tree-name">Rose Levine</div>
-              <div class="tree-dates">Abt. 1903 – Deceased</div>
-              <div class="tree-relation">Great-Grandmother (Rodman branch)</div>
-            </div>
-            <div class="tree-box-item">
-              <div class="tree-name">Phil Rodman</div>
-              <div class="tree-dates">1895 – Deceased</div>
-              <div class="tree-relation">Great-Grandfather (Rodman branch)</div>
-            </div>
-            <div class="tree-box-item">
-              <div class="tree-name">Sadie Kassner</div>
-              <div class="tree-dates">1894 – 1988 | 94</div>
-              <div class="tree-relation">Great-Grandmother (Flender branch)</div>
-            </div>
-            <div class="tree-box-item">
-              <div class="tree-name">Jacob Flender</div>
-              <div class="tree-dates">1892 – 1992 | 100</div>
-              <div class="tree-relation">Great-Grandfather (Flender branch)</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Generacja V i VI: Przodkowie (Rodman, Kantrowitz, Frankel, Kassner, Kempler, Flender, Gletner) -->
-        <div class="tree-branch-group">
-          <span class="tree-branch-title">Generation V &amp; VI &bull; Ancestral Progenitors &amp; Allied Branches</span>
-          <div class="tree-grid">
-            <div class="tree-box-item">
-              <div class="tree-name">Celia Kantrowitz &amp; Max Rodman</div>
-              <div class="tree-dates">1850–1932 &amp; 1849–1930</div>
-              <div class="tree-relation">Rodman Line Ancestors (Parents: Gertrude Levy / Samuel Kantrowitz &amp; Ana Rosenzweig / Aaron Rodman)</div>
-            </div>
-            <div class="tree-box-item">
-              <div class="tree-name">Chaja Frankel &amp; Herschel Kassner</div>
-              <div class="tree-dates">Both b. 1860</div>
-              <div class="tree-relation">Kassner Line Ancestors (Parents: Chaja / Samuel Frankel &amp; Jentel Wachtel / Noah Kassner)</div>
-            </div>
-            <div class="tree-box-item">
-              <div class="tree-name">Marjem Kempler &amp; Elias M. Flender</div>
-              <div class="tree-dates">1862–1910 &amp; 1862–1911</div>
-              <div class="tree-relation">Flender Line Ancestors (Parents: Ella / Jacob Kempler &amp; Sime Gletner / Abraham Flender)</div>
-            </div>
-            <div class="tree-box-item">
-              <div class="tree-name">Sime Gletner &amp; Simon Gletner</div>
-              <div class="tree-dates">19th Century Records</div>
-              <div class="tree-relation">Kraków Archival Roots &amp; Allied Gletner Branch</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FILMIKI -->
-    <section>
-      <h2>Field Research &amp; Kraków Footage</h2>
-      <p>On-location video documentation from historical streets, tenements, and archives.</p>
-      <div class="media-grid">
-        <div class="media-card">
-          <video controls>
-            <source src="video_1.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-          <h3>Field Footage #01</h3>
-          <p>Documentary walkthrough of historical locations and ancestral context in Kraków.</p>
-        </div>
-        <div class="media-card">
-          <video controls>
-            <source src="video_2.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-          <h3>Field Footage #02</h3>
-          <p>On-site exploration of historical districts, tenements, and archival repositories.</p>
-        </div>
-        <div class="media-card">
-          <video controls>
-            <source src="video_3.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-          <h3>Field Footage #03</h3>
-          <p>Archival context, street-level topography, and paleographic analysis.</p>
-        </div>
-        <div class="media-card">
-          <video controls>
-            <source src="video_4.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-          <h3>Field Footage #04</h3>
-          <p>Final summary of the Kraków archival field study and documentary findings.</p>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <footer>
-    <p><strong>GenealogicalInvestigation.com</strong> &bull; Research, Archival Forensics &amp; Documentary Production by <strong>Janusz Stanisław Andrasz</strong></p>
-  </footer>
-
-</body>
-</html>
+    footer
