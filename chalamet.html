@@ -236,41 +236,87 @@
       margin-bottom: 0.5rem;
     }
 
-    /* PEDIGREE TREE STRUCTURE */
-    .tree-box {
+    /* PRAWDZIWE DRZEWO GENEALOGICZNE (WIZUALNA STRUKTURA HIERARCHICZNA) */
+    .genealogical-tree {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 2.25rem;
+      padding: 2.5rem;
       margin-top: 1.5rem;
+      overflow-x: auto;
     }
 
-    .tree-generation {
-      margin-bottom: 1.75rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px dashed rgba(201, 164, 97, 0.25);
+    .tree-branch {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
     }
 
-    .tree-generation:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
+    .tree-level {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      position: relative;
     }
 
-    .gen-title {
+    .tree-node-box {
+      background: rgba(14, 16, 19, 0.9);
+      border: 1.5px solid var(--gold);
+      padding: 1.25rem 1.5rem;
+      min-width: 260px;
+      max-width: 320px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .tree-node-box::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 1.5rem;
+      background: var(--gold);
+    }
+
+    .tree-level:last-child .tree-node-box::after {
+      display: none;
+    }
+
+    .node-generation {
       font-family: 'Cinzel', serif;
-      font-size: 0.82rem;
+      font-size: 0.7rem;
       color: var(--gold);
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.35rem;
       display: block;
     }
 
-    .gen-names {
+    .node-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.35rem;
       color: #ffffff;
-      line-height: 1.6;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .node-details {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .tree-connector-row {
+      text-align: center;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin: -0.5rem 0;
     }
 
     .btn-gold {
@@ -326,12 +372,12 @@
       Primary archival reconstruction of the maternal Flender, Kempler, and Gletner lineages across 19th-century Kraków vital registers, census records, and Kazimierz tenement addresses.
     </p>
 
-    <!-- POJEDYNCZA, CZYSTA GRAFIKA OKŁADKI -->
+    <!-- OKŁADKA -->
     <div class="cover-frame">
       <img src="chalamet-cover.png" alt="Timothée Chalamet: The Kraków File — Archival Dossier" />
     </div>
 
-    <!-- SEKCJA OPISU I LINKU DO BLOGA -->
+    <!-- OPIS I BLOG -->
     <section>
       <h2>Archival Findings &amp; Research Dossier</h2>
       <p>
@@ -345,7 +391,7 @@
       </a>
     </section>
 
-    <!-- SKANY METRYK Z MOŻLIWOŚCIĄ POWIĘKSZENIA -->
+    <!-- SKANY Z POWIĘKSZENIEM -->
     <section>
       <h2>Archival Scans &amp; Vital Records (Evidence)</h2>
       <p>Original 19th-century documents and census registers from state archives. Click any scan to open and inspect the high-resolution evidence in a separate window.</p>
@@ -393,28 +439,53 @@
       </div>
     </section>
 
-    <!-- DRZEWO GENEALOGICZNE W FORMIE CZYTELNYCH POKOLEŃ -->
+    <!-- WIZUALNE DRZEWO GENEALOGICZNE (STRUKTURA WĘZŁOWA) -->
     <section>
       <h2>Pedigree &amp; Lineage Reconstruction</h2>
-      <p>Multi-generation structural breakdown of the maternal ancestral branches analyzed in this case file.</p>
+      <p>Visual genealogical tree tracing the maternal ancestral branches verified through primary archival records in Kraków.</p>
       
-      <div class="tree-box">
-        <div class="tree-generation">
-          <span class="gen-title">Generation I (Proband's Maternal Line)</span>
-          <div class="gen-names">Flender Family Lineage (Kraków / Kazimierz)</div>
-        </div>
-        <div class="tree-generation">
-          <span class="gen-title">Generation II</span>
-          <div class="gen-names">Kempler &amp; Gletner Ancestral Branches (Galicia Vital Registers)</div>
-        </div>
-        <div class="tree-generation">
-          <span class="gen-title">Generation III &amp; IV</span>
-          <div class="gen-names">19th-Century Archival Progenitors Documented via Austro-Hungarian Censuses (1880 &amp; 1900)</div>
+      <div class="genealogical-tree">
+        <div class="tree-branch">
+          <!-- Poziom I: Proband / Linia Główna -->
+          <div class="tree-level">
+            <div class="tree-node-box">
+              <span class="node-generation">Generation I &bull; Maternal Line</span>
+              <div class="node-name">Flender Family</div>
+              <div class="node-details">Kraków &amp; Kazimierz District</div>
+            </div>
+          </div>
+
+          <div class="tree-connector-row">&bull; &bull; &bull; Descends From &bull; &bull; &bull;</div>
+
+          <!-- Poziom II: Rodzice / Allied Branches -->
+          <div class="tree-level">
+            <div class="tree-node-box">
+              <span class="node-generation">Generation II &bull; Allied Branch</span>
+              <div class="node-name">Kempler Ancestral Line</div>
+              <div class="node-details">Galician Vital Registers</div>
+            </div>
+            <div class="tree-node-box">
+              <span class="node-generation">Generation II &bull; Allied Branch</span>
+              <div class="node-name">Gletner Ancestral Line</div>
+              <div class="node-details">Kraków Civil Records</div>
+            </div>
+          </div>
+
+          <div class="tree-connector-row">&bull; &bull; &bull; Progenitors &bull; &bull; &bull;</div>
+
+          <!-- Poziom III: Pradziadkowie / Censuses -->
+          <div class="tree-level">
+            <div class="tree-node-box">
+              <span class="node-generation">Generation III &amp; IV &bull; Progenitors</span>
+              <div class="node-name">Austro-Hungarian Census Roots</div>
+              <div class="node-details">1880 &amp; 1900 Tenement Records</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FILMIKI Z KRAKOWA -->
+    <!-- FILMIKI -->
     <section>
       <h2>Field Research &amp; Kraków Footage</h2>
       <p>On-location video documentation from historical streets, tenements, and archives.</p>
