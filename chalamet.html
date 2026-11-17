@@ -236,8 +236,8 @@
       margin-bottom: 0.5rem;
     }
 
-    /* PRAWDZIWE DRZEWO GENEALOGICZNE (WIZUALNA STRUKTURA HIERARCHICZNA) */
-    .genealogical-tree {
+    /* PRECISE PEDIGREE TREE STRUCTURE (BASED ON UPLOADED DIAGRAM) */
+    .tree-wrapper {
       background: var(--bg-card);
       border: 1px solid var(--border);
       padding: 2.5rem;
@@ -245,78 +245,57 @@
       overflow-x: auto;
     }
 
-    .tree-branch {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      position: relative;
+    .tree-gen-group {
+      margin-bottom: 2.5rem;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem;
     }
 
-    .tree-level {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      position: relative;
+    .tree-gen-group:last-child {
+      margin-bottom: 0;
     }
 
-    .tree-node-box {
-      background: rgba(14, 16, 19, 0.9);
-      border: 1.5px solid var(--gold);
-      padding: 1.25rem 1.5rem;
-      min-width: 260px;
-      max-width: 320px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    }
-
-    .tree-node-box::after {
-      content: '';
-      position: absolute;
-      bottom: -1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2px;
-      height: 1.5rem;
-      background: var(--gold);
-    }
-
-    .tree-level:last-child .tree-node-box::after {
-      display: none;
-    }
-
-    .node-generation {
+    .tree-gen-label {
       font-family: 'Cinzel', serif;
-      font-size: 0.7rem;
+      font-size: 0.85rem;
       color: var(--gold);
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 0.35rem;
+      margin-bottom: 1rem;
       display: block;
     }
 
-    .node-name {
+    .tree-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .tree-person-card {
+      background: rgba(14, 16, 19, 0.85);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      padding: 1.25rem;
+    }
+
+    .person-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       color: #ffffff;
       font-weight: 600;
       margin-bottom: 0.25rem;
     }
 
-    .node-details {
+    .person-dates {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
     }
 
-    .tree-connector-row {
-      text-align: center;
-      color: var(--gold);
-      font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin: -0.5rem 0;
+    .person-relation {
+      font-size: 0.88rem;
+      color: var(--text-muted);
     }
 
     .btn-gold {
@@ -439,46 +418,141 @@
       </div>
     </section>
 
-    <!-- WIZUALNE DRZEWO GENEALOGICZNE (STRUKTURA WĘZŁOWA) -->
+    <!-- DOKŁADNE DRZEWO GENEALOGICZNE NA BAZIE PRzesłanej GRAFIKI -->
     <section>
       <h2>Pedigree &amp; Lineage Reconstruction</h2>
-      <p>Visual genealogical tree tracing the maternal ancestral branches verified through primary archival records in Kraków.</p>
+      <p>Complete multi-generation family tree and ancestral branches verified through primary archival research.</p>
       
-      <div class="genealogical-tree">
-        <div class="tree-branch">
-          <!-- Poziom I: Proband / Linia Główna -->
-          <div class="tree-level">
-            <div class="tree-node-box">
-              <span class="node-generation">Generation I &bull; Maternal Line</span>
-              <div class="node-name">Flender Family</div>
-              <div class="node-details">Kraków &amp; Kazimierz District</div>
+      <div class="tree-wrapper">
+        <!-- Generacja I & II (Proband i rodzice) -->
+        <div class="tree-gen-group">
+          <span class="tree-gen-label">Generation I &amp; II &bull; Descendants &amp; Parents</span>
+          <div class="tree-cards-grid">
+            <div class="tree-person-card">
+              <div class="person-name">Timothée Chalamet</div>
+              <div class="person-dates">Birth</div>
+              <div class="person-relation">Proband / Descendant</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Marc Chalamet</div>
+              <div class="person-dates">Deceased</div>
+              <div class="person-relation">Father</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Nicole Flender</div>
+              <div class="person-dates">Birth</div>
+              <div class="person-relation">Mother</div>
             </div>
           </div>
+        </div>
 
-          <div class="tree-connector-row">&bull; &bull; &bull; Descends From &bull; &bull; &bull;</div>
-
-          <!-- Poziom II: Rodzice / Allied Branches -->
-          <div class="tree-level">
-            <div class="tree-node-box">
-              <span class="node-generation">Generation II &bull; Allied Branch</span>
-              <div class="node-name">Kempler Ancestral Line</div>
-              <div class="node-details">Galician Vital Registers</div>
+        <!-- Generacja III (Dziadkowie) -->
+        <div class="tree-gen-group">
+          <span class="tree-gen-label">Generation III &bull; Grandparents</span>
+          <div class="tree-cards-grid">
+            <div class="tree-person-card">
+              <div class="person-name">Enid Rodman</div>
+              <div class="person-dates">1927 – 2022 | 95</div>
+              <div class="person-relation">Maternal Grandmother</div>
             </div>
-            <div class="tree-node-box">
-              <span class="node-generation">Generation II &bull; Allied Branch</span>
-              <div class="node-name">Gletner Ancestral Line</div>
-              <div class="node-details">Kraków Civil Records</div>
+            <div class="tree-person-card">
+              <div class="person-name">Harold Flender</div>
+              <div class="person-dates">1925 – 1975 | 50</div>
+              <div class="person-relation">Maternal Grandfather</div>
             </div>
           </div>
+        </div>
 
-          <div class="tree-connector-row">&bull; &bull; &bull; Progenitors &bull; &bull; &bull;</div>
+        <!-- Generacja IV (Pradziadkowie) -->
+        <div class="tree-gen-group">
+          <span class="tree-gen-label">Generation IV &bull; Great-Grandparents</span>
+          <div class="tree-cards-grid">
+            <div class="tree-person-card">
+              <div class="person-name">Rose Levine</div>
+              <div class="person-dates">Abt. 1903 – Deceased</div>
+              <div class="person-relation">Great-Grandmother (Rodman line)</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Phil Rodman</div>
+              <div class="person-dates">1895 – Deceased</div>
+              <div class="person-relation">Great-Grandfather</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Sadie Kassner</div>
+              <div class="person-dates">1894 – 1988 | 94</div>
+              <div class="person-relation">Great-Grandmother (Flender line)</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Jacob Flender</div>
+              <div class="person-dates">1892 – 1992 | 100</div>
+              <div class="person-relation">Great-Grandfather</div>
+            </div>
+          </div>
+        </div>
 
-          <!-- Poziom III: Pradziadkowie / Censuses -->
-          <div class="tree-level">
-            <div class="tree-node-box">
-              <span class="node-generation">Generation III &amp; IV &bull; Progenitors</span>
-              <div class="node-name">Austro-Hungarian Census Roots</div>
-              <div class="node-details">1880 &amp; 1900 Tenement Records</div>
+        <!-- Generacja V (Pradziadkowie / Prapradziadkowie) -->
+        <div class="tree-gen-group">
+          <span class="tree-gen-label">Generation V &amp; VI &bull; Earlier Ancestors &amp; Allied Branches</span>
+          <div class="tree-cards-grid">
+            <div class="tree-person-card">
+              <div class="person-name">Celia Kantrowitz</div>
+              <div class="person-dates">Abt. 1850 – 1932 | 82</div>
+              <div class="person-relation">Ancestor (Rodman / Kantrowitz)</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Max Rodman</div>
+              <div class="person-dates">1849 – 1930 | 81</div>
+              <div class="person-relation">Ancestor (Rodman line)</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Chaja Frankel</div>
+              <div class="person-dates">1860 – Deceased</div>
+              <div class="person-relation">Ancestor (Kassner branch)</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Herschel Kassner</div>
+              <div class="person-dates">1860 – Deceased</div>
+              <div class="person-relation">Ancestor (Kassner branch)</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Marjem Kempler</div>
+              <div class="person-dates">1862 – 1910 | 48</div>
+              <div class="person-relation">Ancestor (Kempler branch)</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Elias M. Flender</div>
+              <div class="person-dates">1862 – 1911 | 49</div>
+              <div class="person-relation">Ancestor (Flender branch)</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Gertrude Levy &amp; Samuel Kantrowitz</div>
+              <div class="person-dates">Historical Records</div>
+              <div class="person-relation">Allied Ancestral Line</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Ana Rosenzweig &amp; Aaron Rodman</div>
+              <div class="person-dates">Historical Records</div>
+              <div class="person-relation">Allied Ancestral Line</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Chaja &amp; Samuel Frankel</div>
+              <div class="person-dates">Historical Records</div>
+              <div class="person-relation">Allied Ancestral Line</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Jentel Wachtel &amp; Noah Kassner</div>
+              <div class="person-dates">Historical Records</div>
+              <div class="person-relation">Allied Ancestral Line</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Ella &amp; Jacob Kempler</div>
+              <div class="person-dates">Historical Records</div>
+              <div class="person-relation">Allied Ancestral Line</div>
+            </div>
+            <div class="tree-person-card">
+              <div class="person-name">Sime Gletner &amp; Abraham Flender (razem z Simon Gletner)</div>
+              <div class="person-dates">1829 – 1892+ Records</div>
+              <div class="person-relation">Kraków Archival Progenitors</div>
             </div>
           </div>
         </div>
@@ -509,7 +583,7 @@
         <div class="media-card">
           <video controls>
             <source src="video_3.mp4" type="video/mp4">
-            Your browser does not support video.
+            Your media card video format
           </video>
           <h3>Field Footage #03</h3>
           <p>Archival context, street-level topography, and paleographic analysis.</p>
